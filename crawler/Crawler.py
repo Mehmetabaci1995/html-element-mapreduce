@@ -4,7 +4,11 @@ import validators
 import queue
 
 """
-    Author(s):      Scot Matson
+    Author:
+        - Scot Matson
+
+    Contributors:
+        - [Your name here]
 
     Description: Basic web crawler that collects web pages for later parsing.
                  Used to collect large data sets; to be used for learning
@@ -24,7 +28,10 @@ page_number = 0
 
 def crawl_web(seed_url, number_of_pages):
     """
-        Contributors: Scot Matson
+        Author: Scot Matson
+
+        Contributors:
+            - [Your name here]
 
         Master process for web crawling operations.
     """
@@ -46,7 +53,11 @@ def crawl_web(seed_url, number_of_pages):
 
 def scrape_page(url, q):
     """
-        Contributors: Scot Matson
+        Author:
+            - Scot Matson
+
+        Contributors:
+            - [Your name here]
 
         Scrapes 'href' information from a web page
     """
@@ -87,7 +98,11 @@ def scrape_page(url, q):
 
 def save_page(url, source_code):
     """
-        Contributors: Scot Matson
+        Author:
+            - Scot Matson
+
+        Contributors:
+            - [Your name here]
 
         Save data to a file.
         Notes:
