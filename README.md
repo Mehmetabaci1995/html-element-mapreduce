@@ -43,3 +43,38 @@ Be sure that you are using a version of pip that is compatible with python 3.
 * Database incorporation
 
 * Introduce OOP for improved code structuring
+
+
+### Contributing To This Project
+The current implenetation of this repository is strictly for academic purposes. Only assigned members
+of the group will be considered for pull requests. This code is free to use with the exception that it
+is not incorporated into your own assignment. (i.e., don't steal my code if you are not in my group)
+
+#### Setting Up Your Local Repo
+
+* Clone this project onto your local machine
+
+    git clone https://github.com/scotmatson/html-element-mapreduce.git
+
+* Create your own development branch
+
+    git branch [branch name]
+
+* When you are ready to commit to the master repo, first update your GitHub branch
+
+    git push origin master
+
+* Make a pull request to the master repository. I will handle merging your files.
+
+* If you are behind master, you will need to rebase! Make sure you have the master repo set up as a remote
+  Perform this operation from YOUR master branch, else risk losing your work!
+
+    git remote add [name] https://github.com/scotmatson/html-elements-mapreduce.git
+
+    git fetch [name]
+
+    git rebase [name]/master
+
+* Locally merge master into your branch and resolve any conflicts.
+
+
