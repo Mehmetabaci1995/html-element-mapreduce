@@ -81,4 +81,8 @@ is not incorporated into your own assignment. (i.e., don't steal my code if you 
 
 * Locally merge master into your branch and resolve any conflicts.
 
-
+### Notes
+It looks like the Requests library is having difficulty obtaining data
+on SJSU_premier. This is probably something we can fix with additional parameters.
+As long as it works in your development space, it is not a pressing issue.
+Regardless, it is worth pointing out as it may effect you if you are on campus.
