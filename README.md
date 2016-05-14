@@ -66,6 +66,8 @@ is not incorporated into your own assignment. (i.e., don't steal my code if you 
     git branch [branch name]
 
 * When you are ready to commit to the master repo, first update your GitHub branch
+  (This isn't really necessary, but I suggest doing this to ensure you do not accidently
+   lose data during this process)
 
     git push origin master
 
