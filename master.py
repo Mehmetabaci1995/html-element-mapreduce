@@ -21,6 +21,11 @@ def main():
         Contributors:
             - Scot Matson
     """
+    # TODO: This needs to be dynamically generated. The data gets destroyed
+    #       during runtime - GitHub does not store empty directories.
+    #       
+    #       Going parallel, we may want to use multiple directories to help
+    #       separate data sets, i.e., web1, web2, web3....... etc.
     data_directory = './web_pages/'
 
     # This is the biggest bottleneck in the application
