@@ -4,7 +4,7 @@ import validators
 import queue
 
 """
-    Author:      Scot Matson
+    Author(s):      Scot Matson
 
     Description: Basic web crawler that collects web pages for later parsing.
                  Used to collect large data sets; to be used for learning
@@ -23,6 +23,11 @@ import queue
 page_number = 0
 
 def crawl_web(seed_url, number_of_pages):
+    """
+        Contributors: Scot Matson
+
+        Master process for web crawling operations.
+    """
     seed = seed_url
     MAX_PAGES = number_of_pages
     global page_number
@@ -40,6 +45,11 @@ def crawl_web(seed_url, number_of_pages):
             pass
 
 def scrape_page(url, q):
+    """
+        Contributors: Scot Matson
+
+        Scrapes 'href' information from a web page
+    """
     # Set user-agent to address cases in which sites are blocking
     # traffic unassociated with a web browser
     global page_number
@@ -76,6 +86,14 @@ def scrape_page(url, q):
         pass
 
 def save_page(url, source_code):
+    """
+        Contributors: Scot Matson
+
+        Save data to a file.
+        Notes:
+            Probably doesn't belong in this file, it deserves its own I/O class.
+            Is this something worth doing?
+    """
     global page_number
     file_path = 'web_pages' # For now, just use a local directory
     file_name = '/page_' + str(page_number)
