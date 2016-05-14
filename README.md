@@ -9,6 +9,16 @@ to scrape web data and sum the total number of HTML elements across all pages.
 
 * Initial release v0.01
 
+### Directory Structure
+
+* /crawler - Files used for the web crawler
+
+* /mapreduce - Files used for the mapreduce implementation
+
+* /web_pages - Temporary storage for web sites
+
+* /out - Results of the mapreduce operation as CSV
+
 ### Required Modules
 
 * [Requests](http://docs.python-requests.org/en/master/)
@@ -31,3 +41,5 @@ Be sure that you are using a version of pip that is compatible with python 3.
 * Better data parsing
 
 * Database incorporation
+
+* Introduce OOP for improved code structuring

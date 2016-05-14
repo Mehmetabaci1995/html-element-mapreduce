@@ -42,7 +42,7 @@ def main():
     reduced_data = MapReduce.reduce(intermediate_data)
 
     # Output results in reverse sequential ordering by value
-    csvfile = open('out/results.txt', 'w')
+    csvfile = open('out/results.csv', 'w')
     writer = csv.writer(csvfile, delimiter=',')
     for tag in sorted(reduced_data, key=reduced_data.get, reverse=True):
         print(tag + ': '+ str(reduced_data[tag]))
