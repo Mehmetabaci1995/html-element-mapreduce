@@ -3,6 +3,10 @@ Originally developed by Scot Matson for a class assignment as San Jose State Uni
 This application in its current implementation runs a sequential Crawler/MapReduce job
 to scrape web data and sum the total number of HTML elements across all pages.
 
+### Project Contributors
+
+* Scot Matson
+
 ### Build
 
 * Developed with Python 3.5.1
