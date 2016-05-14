@@ -52,7 +52,8 @@ Be sure that you are using a version of pip that is compatible with python 3.
 ### Contributing To This Project
 The current implenetation of this repository is strictly for academic purposes. Only assigned members
 of the group will be considered for pull requests. This code is free to use with the exception that it
-is not incorporated into your own assignment. (i.e., don't steal my code if you are not in my group)
+is not incorporated into your own assignment. (i.e., don't steal my code if you are not in my group).
+
 
 #### Setting Up Your Local Repo
 
@@ -68,7 +69,8 @@ is not incorporated into your own assignment. (i.e., don't steal my code if you 
 
     git push origin master
 
-* Make a pull request to the master repository. I will handle merging your files.
+* Make a pull request to the master repository to have your code merged into the master repo.
+  Be sure that you have resolved any conflicts that may arise!
 
 * If you are behind master, you will need to rebase! Make sure you have the master repo set up as a remote
   Perform this operation from YOUR master branch, else risk losing your work!
