@@ -22,6 +22,11 @@ import queue
     Change Log:  Data loss is high, but not something I'm worried about
                  at this time. Initial implementation is focused on
                  ability to crawl K-defined pages without error.
+
+    NOTES:
+        I am unable to access sjsu.edu today, I may have been blacklisted. (whoops!)
+        Careful while crawling, don't use large data sets. We need to implement a
+        rotating domain and IP spoofing apparently.
 """
 
 page_number = 0
