@@ -5,6 +5,9 @@ import operator
 import csv
 
 """
+   Author(s):
+       - Scot Matson
+
    This is the master process that delegates all other processes.
    The overall purpose is to ensure that data is continously coming in,
    being parsed, and being condensed, until some condition is met at which
@@ -14,10 +17,14 @@ import csv
    should use parallelism.
 """
 def main():
-
+    """
+        Contributors:
+            - Scot Matson
+    """
     data_directory = './web_pages/'
 
-    # One process should be continuously pulling in new data
+    # This is the biggest bottleneck in the application
+    # Parallelizing this piece would give a major efficiency boost
     Crawler.crawl_web('http://www.sjsu.edu', 10)
 
     # Build a list of the files we have
