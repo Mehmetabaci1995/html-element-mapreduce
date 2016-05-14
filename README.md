@@ -69,7 +69,7 @@ is not incorporated into your own assignment. (i.e., don't steal my code if you 
   (This isn't really necessary, but I suggest doing this to ensure you do not accidently
    lose data during this process)
 
-    git push origin master
+    git push origin [branch name]
 
 * Make a pull request to the master repository to have your code merged into the master repo.
   Be sure that you have resolved any conflicts that may arise!
