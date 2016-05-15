@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import validators
 import queue
+from crawler import Spoofer
 
 """
     Author:
@@ -69,15 +70,15 @@ def scrape_page(url, q):
     # Set user-agent to address cases in which sites are blocking
     # traffic unassociated with a web browser
     global page_number
-    user_agents = [
-        {'User-Agent' : 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)'},
-        {'User-Agent' : 'stub'},
-        {'User-Agent' : 'stub'}
-    ]
-    timeout = 0.050
+
+    # Dynamically generate a user-agent
+    user_agent = Spoofer.UserAgent()
+    user_agent = {'User-Agent' : user_agent.get_user_agent()}
+    #timeout = 0.050
+    timeout = 5000.0
     #try:
     # Requests for web requests
-    r = requests.get(url, headers=user_agents[0], timeout=timeout)
+    r = requests.get(url, headers=user_agent, timeout=timeout)
     plain_text = r.text
 
     # BeautifulSoup for HTML parsing
