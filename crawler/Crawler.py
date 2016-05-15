@@ -75,35 +75,35 @@ def scrape_page(url, q):
         {'User-Agent' : 'stub'}
     ]
     timeout = 0.050
-    try:
-        # Requests for web requests
-        r = requests.get(url, headers=user_agents[0], timeout=timeout)
-        plain_text = r.text
+    #try:
+    # Requests for web requests
+    r = requests.get(url, headers=user_agents[0], timeout=timeout)
+    plain_text = r.text
 
-        # BeautifulSoup for HTML parsing
-        soup = BeautifulSoup(plain_text, 'html5lib')
+    # BeautifulSoup for HTML parsing
+    soup = BeautifulSoup(plain_text, 'html5lib')
 
-        # Store page and increment counter
-        save_page(url, soup.prettify())
-        print('['+str(page_number)+']','Stored:',url)
-        page_number += 1
+    # Store page and increment counter
+    save_page(url, soup.prettify())
+    print('['+str(page_number)+']','Stored:',url)
+    page_number += 1
 
-        # This is where the actual scraping occurs
-        # Probably should put this into its own function
-        for line in soup.find_all('a'):
-            href = str(line.get('href'))
-            if (validators.url(href)):
-                # Add scraped pages to the Queue
-                q.put(line.get('href'))
-            else:
-                # Likely malformed. Okay to dump for now.
-                # print('Malformed:',url)
-                pass
-    except:
+    # This is where the actual scraping occurs
+    # Probably should put this into its own function
+    for line in soup.find_all('a'):
+        href = str(line.get('href'))
+        if (validators.url(href)):
+            # Add scraped pages to the Queue
+            q.put(line.get('href'))
+        else:
+            # Likely malformed. Okay to dump for now.
+            # print('Malformed:',url)
+            pass
+    #except:
         # To maintain efficiency, we are going to burn any page that
         # loads slowly, timesout, or has too many redirects.
         # print('Timeout:',url)
-        pass
+    #    pass
 
 def save_page(url, source_code):
     """
