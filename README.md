@@ -6,6 +6,7 @@ to scrape web data and sum the total number of HTML elements across all pages.
 ### Project Contributors
 
 * Scot Matson
+* Talanda Williams
 
 ### Build
 
@@ -90,3 +91,5 @@ It looks like the Requests library is having difficulty obtaining data
 on SJSU_premier. This is probably something we can fix with additional parameters.
 As long as it works in your development space, it is not a pressing issue.
 Regardless, it is worth pointing out as it may effect you if you are on campus.
+
+Talanda: Still having issues at home when trying to get the results file to not be blank. 
