@@ -69,11 +69,15 @@ def scrape_page(url, q):
     # Set user-agent to address cases in which sites are blocking
     # traffic unassociated with a web browser
     global page_number
-    user_agent = {'User-Agent' : 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)'}
+    user_agents = [
+        {'User-Agent' : 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)'},
+        {'User-Agent' : 'stub'},
+        {'User-Agent' : 'stub'}
+    ]
     timeout = 0.050
     try:
         # Requests for web requests
-        r = requests.get(url, headers=user_agent, timeout=timeout)
+        r = requests.get(url, headers=user_agents[0], timeout=timeout)
         plain_text = r.text
 
         # BeautifulSoup for HTML parsing
