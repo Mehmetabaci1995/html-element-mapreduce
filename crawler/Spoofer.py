@@ -162,3 +162,13 @@ class IP:
 
     def __init__(self):
         pass
+
+    def get_ip():
+        # Will require a tor proxy
+        # this proxy will need to be updated
+        # periodically.
+
+        # Tor port is 9050
+        # Requests library now supports SOCKS5 Proxy
+
+        # Updating is tricky, may need stem and signal library
