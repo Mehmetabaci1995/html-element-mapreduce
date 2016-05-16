@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import validators
 import queue
 from crawler import Spoofer
+from threading import Thread
 
 """
     Author:
@@ -31,6 +32,7 @@ from crawler import Spoofer
 """
 
 page_number = 0
+concurrent = 100
 
 def crawl_web(seed_url, number_of_pages):
     """
@@ -49,13 +51,30 @@ def crawl_web(seed_url, number_of_pages):
     visited = set() # Prevent revisiting
 
     while not q.empty() and page_number < MAX_PAGES:
-        url = q.get()
-        if url not in visited:
-            scrape_page(url, q)
-            visited.add(url)
-        else:
-            #print('Seen:',url)
-            pass
+        # Thread page scraping process
+        for i in range(concurrent):
+            t = Thread(target=doWork(visited, q))
+            t.daemon = True
+            t.start()
+
+
+def doWork(visited, q):
+    """
+        Author: Dave Barban
+
+        Contributors:
+            - [Your name here]
+
+        Master process for web crawling operations.
+    """
+    #Abstract page scraping further for threading
+    url = q.get()
+    if url not in visited:
+        scrape_page(url, q)
+        visited.add(url)
+    else:
+        #print('Seen:',url)
+        pass
 
 def scrape_page(url, q):
     """
@@ -73,12 +92,13 @@ def scrape_page(url, q):
 
     # Dynamically generate a user-agent
     user_agent = Spoofer.UserAgent()
-    user_agent = {'User-Agent' : user_agent.get_user_agent()}
+    # compose header list
+    header_list = {'User-Agent' : user_agent.get_user_agent(),"Accept-Encoding": "gzip, deflate"}
     #timeout = 0.050
     timeout = 5000.0
     #try:
     # Requests for web requests
-    r = requests.get(url, headers=user_agent, timeout=timeout)
+    r = requests.get(url, headers=header_list, timeout=timeout)
     plain_text = r.text
 
     # BeautifulSoup for HTML parsing
