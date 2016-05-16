@@ -10,7 +10,7 @@ from threading import Thread
         - Scot Matson
 
     Contributors:
-        - [Your name here]
+        - [David Barban]
 
     Description: Basic web crawler that collects web pages for later parsing.
                  Used to collect large data sets; to be used for learning
@@ -39,7 +39,7 @@ def crawl_web(seed_url, number_of_pages):
         Author: Scot Matson
 
         Contributors:
-            - [Your name here]
+            - [David Barban]
 
         Master process for web crawling operations.
     """
@@ -60,7 +60,7 @@ def crawl_web(seed_url, number_of_pages):
 
 def doWork(visited, q):
     """
-        Author: Dave Barban
+        Author: David Barban
 
         Contributors:
             - [Your name here]
