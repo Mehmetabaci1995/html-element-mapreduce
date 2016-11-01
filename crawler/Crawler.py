@@ -9,9 +9,6 @@ from threading import Thread
     Author:
         - Scot Matson
 
-    Contributors:
-        - [David Barban]
-
     Description: Basic web crawler that collects web pages for later parsing.
                  Used to collect large data sets; to be used for learning
                  about MapReduce implementations.
@@ -57,7 +54,7 @@ def crawl_web(seed_url, number_of_pages):
             t.daemon = True
             t.start()
 
-
+'''
 def doWork(visited, q):
     """
         Author: David Barban
@@ -75,6 +72,7 @@ def doWork(visited, q):
     else:
         #print('Seen:',url)
         pass
+'''
 
 def scrape_page(url, q):
     """
