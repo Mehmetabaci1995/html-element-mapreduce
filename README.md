@@ -6,7 +6,6 @@ to scrape web data and sum the total number of HTML elements across all pages.
 ### Project Contributors
 
 * Scot Matson
-* David Barban
 
 ### Build
 
